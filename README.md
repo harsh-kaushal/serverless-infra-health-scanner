@@ -1,20 +1,20 @@
 # 🚑 Serverless Infrastructure Health Scanner
 
-**Lightweight reliability monitoring for cloud infrastructure - automated, observable, & production-ready.**
+**Lightweight, cost-efficient reliability monitoring for cloud infrastructure — automated, observable, and production-ready.**
 
 ---
 
 ## 🧭 What is it
 
-The **Serverless Infrastructure Health Scanner** is a drop-in serverless component that continuously checks the health of your infrastructure and surfaces early warning signals.
+The **Serverless Infrastructure Health Scanner** is a drop-in serverless component that continuously checks the health of your infrastructure and surfaces early warning signals before incidents escalate.
 
 It automatically scans:
 
 🗄️ **PostgreSQL databases** → Detects long-running (stuck) queries
 📦 **Kubernetes workloads** → Detects abnormal container restart spikes via Prometheus
-📊 **CloudWatch metrics** → Triggers alerts before incidents escalate
+📊 **CloudWatch metrics** → Publishes health signals and triggers alerts
 
-**Design goals:**
+**Design goals**
 
 ⚡ Fast detection
 🔁 Fully automated
@@ -47,7 +47,7 @@ terraform apply
 
 ---
 
-### What gets created automatically
+## ⚙️ What gets created automatically
 
 ⚙️ Lambda function
 ⏰ EventBridge scheduled trigger
@@ -75,7 +75,7 @@ Your resources should follow predictable patterns so the scanner can auto-discov
 <service>-alb
 ```
 
-**Example:**
+**Example**
 
 ```
 payments-connect
@@ -87,7 +87,7 @@ payments-alb
 
 ### Step 2 — Store database credentials in Secrets Manager
 
-**Required secret structure:**
+**Required secret structure**
 
 ```
 {
@@ -150,18 +150,113 @@ Every scheduled run:
 * Add proactive alerting to production systems
 * Improve platform reliability
 * Strengthen observability without heavy tooling
+* Provide early-warning signals for platform instability
 
 ---
 
-## 💡 Why this exists
+## 💰 Cost & Observability Philosophy
+
+This scanner is intentionally designed as a **lightweight health monitoring layer**, not a full observability platform.
+
+Traditional monitoring systems continuously collect large volumes of telemetry, which provides deep visibility but can increase operational cost and complexity at scale.
+
+This system takes a different approach:
+
+* Runs **targeted diagnostic checks** on a schedule
+* Collects **only actionable health signals**
+* Publishes alerts when instability patterns appear
+* Avoids continuous high-volume telemetry collection
+
+**The result**
+
+💸 Lower monitoring overhead
+⚡ Faster detection of common reliability risks
+🧠 Simpler operational model
+📉 Cost-conscious infrastructure monitoring
+
+---
+
+## 📊 Example Cost Comparison
+
+The following example illustrates a **typical small-to-medium production environment**.
+
+### Assumptions
+
+* 1 Kubernetes cluster (~10 nodes)
+* 1 PostgreSQL database
+* Standard CloudWatch retention
+* Health scanner runs every 5 minutes
+* Moderate log and metric volume
+
+| Monitoring Approach       | Components                      | Estimated Monthly Cost | Monitoring Model        | Maintenance Effort          |
+| ------------------------- | ------------------------------- | ---------------------- | ----------------------- | --------------------------- |
+| Container + DB Insights   | Continuous telemetry collection | ₹8,000 – ₹20,000       | Always-on monitoring    | Low (fully managed)         |
+| Serverless Health Scanner | Scheduled diagnostic checks     | ₹100 – ₹800            | Event-driven monitoring | Low–Moderate (custom logic) |
+
+---
+
+### What this comparison shows
+
+This scanner reduces monitoring overhead by:
+
+* Running **periodic targeted diagnostics** instead of continuous telemetry
+* Publishing alerts only when instability patterns appear
+* Minimizing metric and log ingestion volume
+
+---
+
+### Important Note
+
+Actual costs depend on:
+
+* Resource count
+* Metric and log volume
+* Retention duration
+* Monitoring frequency
+* Regional pricing
+
+This comparison is intended to illustrate **architectural tradeoffs**, not provide exact pricing.
+
+---
+
+## 🧠 Why this exists
 
 Most monitoring systems react **after failure**.
 
 This scanner focuses on detecting **early instability signals**, enabling teams to respond before incidents escalate into outages.
 
-It is intentionally:
+It reflects a simple production principle:
 
-🪶 Lightweight
-🤖 Automated
-🔍 Observable
-🏭 Production-focused
+**Small, automated health checks prevent large incidents.**
+
+---
+
+## 🏭 Production Characteristics
+
+✅ Serverless and event-driven
+✅ Secure credential handling via Secrets Manager
+✅ Infrastructure-as-Code deployment
+✅ Minimal operational overhead
+✅ Cloud-native reliability design
+✅ Platform-friendly integration
+✅ Cost-aware monitoring architecture
+
+---
+
+## 🚀 Repository Purpose
+
+This project demonstrates practical **Platform Engineering** and **Reliability Engineering** patterns:
+
+* Event-driven infrastructure automation
+* Proactive system health monitoring
+* Cost-aware operational design
+* Production-ready serverless architecture
+* Infrastructure observability integration
+* FinOps-aligned reliability tooling
+
+---
+
+## 📌 Status
+
+**Production-ready reference implementation**
+Designed for real infrastructure environments and platform teams.
