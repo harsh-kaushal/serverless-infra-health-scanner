@@ -1,6 +1,6 @@
 # 🚑 Serverless Infrastructure Health Scanner
 
-**Lightweight reliability monitoring for cloud infrastructure — automated, observable, and production-ready.**
+**Lightweight reliability monitoring for cloud infrastructure - automated, observable, & production-ready.**
 
 ---
 
