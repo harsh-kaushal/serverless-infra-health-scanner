@@ -1,4 +1,4 @@
-# 🚑 Autonomous Infrastructure Health Scanner
+# 🚑 Serverless Infrastructure Health Scanner
 
 **Lightweight reliability monitoring for cloud infrastructure — automated, observable, and production-ready.**
 
@@ -6,7 +6,7 @@
 
 ## 🧭 What is it
 
-The **Autonomous Infrastructure Health Scanner** is a drop-in serverless component that continuously checks the health of your infrastructure and surfaces early warning signals.
+The **Serverless Infrastructure Health Scanner** is a drop-in serverless component that continuously checks the health of your infrastructure and surfaces early warning signals.
 
 It automatically scans:
 
@@ -29,8 +29,8 @@ It automatically scans:
 ### Step 1 — Clone the repository
 
 ```
-git clone https://github.com/your-repo/autonomous-infrastructure-health-scanner.git
-cd autonomous-infrastructure-health-scanner
+git clone https://github.com/your-repo/serverless-infra-health-scanner.git
+cd serverless-infra-health-scanner
 ```
 
 ### Step 2 — Initialize Terraform
@@ -118,7 +118,7 @@ This allows the scanner to detect container instability patterns.
 ### Step 4 — Deploy the Terraform module
 
 ```
-module "health_scanner" {
+module "infra_health_scanner" {
   source = "./module"
 
   threshold_minutes = 90
