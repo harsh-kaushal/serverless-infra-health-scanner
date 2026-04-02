@@ -260,3 +260,7 @@ This project demonstrates practical **Platform Engineering** and **Reliability E
 
 **Production-ready reference implementation**
 Designed for real infrastructure environments and platform teams.
+
+## 📄 License
+
+Licensed under the Apache License 2.0.
