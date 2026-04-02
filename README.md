@@ -10,17 +10,17 @@ The **Serverless Infrastructure Health Scanner** is a drop-in serverless compone
 
 It automatically scans:
 
-🗄️ **PostgreSQL databases** → Detects long-running (stuck) queries
-📦 **Kubernetes workloads** → Detects abnormal container restart spikes via Prometheus
-📊 **CloudWatch metrics** → Publishes health signals and triggers alerts
+🗄️ **PostgreSQL databases** → Detects long-running (stuck) queries   
+📦 **Kubernetes workloads** → Detects abnormal container restart spikes via Prometheus   
+📊 **CloudWatch metrics** → Publishes health signals and triggers alerts   
 
 **Design goals**
 
-⚡ Fast detection
-🔁 Fully automated
-🔐 Secure by default
-🧩 Easy to integrate
-🏗️ Infrastructure-as-Code friendly
+⚡ Fast detection   
+🔁 Fully automated   
+🔐 Secure by default   
+🧩 Easy to integrate   
+🏗️ Infrastructure-as-Code friendly   
 
 ---
 
@@ -49,11 +49,11 @@ terraform apply
 
 ## ⚙️ What gets created automatically
 
-⚙️ Lambda function
-⏰ EventBridge scheduled trigger
-📊 CloudWatch custom metrics
-🚨 CloudWatch alarms
-🔐 IAM roles and permissions
+⚙️ Lambda function   
+⏰ EventBridge scheduled trigger   
+📊 CloudWatch custom metrics   
+🚨 CloudWatch alarms   
+🔐 IAM roles and permissions   
 
 **No manual wiring required.**
 
@@ -132,12 +132,12 @@ module "infra_health_scanner" {
 
 Every scheduled run:
 
-1️⃣ Discover databases automatically
-2️⃣ Fetch credentials securely
-3️⃣ Detect long-running queries
-4️⃣ Query Prometheus for restart spikes
-5️⃣ Publish CloudWatch metrics
-6️⃣ Trigger alerts if thresholds are exceeded
+1️⃣ Discover databases automatically   
+2️⃣ Fetch credentials securely   
+3️⃣ Detect long-running queries   
+4️⃣ Query Prometheus for restart spikes   
+5️⃣ Publish CloudWatch metrics   
+6️⃣ Trigger alerts if thresholds are exceeded   
 
 **No dashboards required. No manual checks.**
 
@@ -169,10 +169,10 @@ This system takes a different approach:
 
 **The result**
 
-💸 Lower monitoring overhead
-⚡ Faster detection of common reliability risks
-🧠 Simpler operational model
-📉 Cost-conscious infrastructure monitoring
+💸 Lower monitoring overhead   
+⚡ Faster detection of common reliability risks   
+🧠 Simpler operational model   
+📉 Cost-conscious infrastructure monitoring   
 
 ---
 
@@ -233,13 +233,13 @@ It reflects a simple production principle:
 
 ## 🏭 Production Characteristics
 
-✅ Serverless and event-driven
-✅ Secure credential handling via Secrets Manager
-✅ Infrastructure-as-Code deployment
-✅ Minimal operational overhead
-✅ Cloud-native reliability design
-✅ Platform-friendly integration
-✅ Cost-aware monitoring architecture
+✅ Serverless and event-driven   
+✅ Secure credential handling via Secrets Manager  
+✅ Infrastructure-as-Code deployment  
+✅ Minimal operational overhead   
+✅ Cloud-native reliability design   
+✅ Platform-friendly integration   
+✅ Cost-aware monitoring architecture   
 
 ---
 
